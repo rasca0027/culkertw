@@ -16,6 +16,11 @@ def list(request):
     seeds = Seed.objects.all()
     return render(request, 'list.html', {'seeds': seeds})
 
+def seed(request, seed_id):
+    seed = Seed.objects.get(pk=seed_id)
+    his_trips = Trip.objects.filter(seed_id=seed_id)
+    return render(request, 'project.html', {'seed': seed, 'his_trips': his_trips})
+
 def story(request, story_id):
     story = Trip.objects.get(pk=story_id)
     notes = story.note.split('@')

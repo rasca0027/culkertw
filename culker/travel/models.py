@@ -3,11 +3,11 @@ from django.db import models
 
 class Seed(models.Model):
     LOC_CHOICE = (
-        ('N', 'north'),
-        ('M', 'middle'),
-        ('S', 'south'),
-        ('E', 'east'),
-        ('O', 'other'),
+        ('north', '北部'),
+        ('middle', '中部'),
+        ('south', '南部'),
+        ('east', '東部'),
+        ('others', '其他'),
     )
 
     name = models.CharField(max_length=30)

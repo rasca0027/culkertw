@@ -76,7 +76,7 @@
                         <h5>費用 NTD {{ story.fee }}</h5>
                         <h5>語言 {{ story.language }}</h5>
                         <h5>總共歷時 {{ story.duration }}</h5>
-                        <h5>退訂政策 <a href="{% url 'help' %}">{{ story.cancel }}</a></h5>
+                        <h5>退訂政策 <a href="{% url 'help' %}">{{ story.get_cancel_display }}</a></h5>
                     </div>
                 </div>
         

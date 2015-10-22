@@ -89,13 +89,13 @@
         <ul id="portfolio-grid" class="projectlist clearfix">
         {% for seed in feature %}
            <li class="project mix mix_all">
-                <a href="">
+           <a href="/seed/{{ seed.pk }}/">
                     <img src="{{ seed.avatar }}" alt="thumbnail">
                     <div class="projectinfo">
                         <div class="meta">
                             <h4>{{ seed.name }}</h4>
                             <h6>{{ seed.quote }}</h6>
-                            <h6><em>{{ seed.location }}</em></h6>
+                            <h6><em>{{ seed.get_location_display }}</em></h6>
                         </div>
                     </div>
                 </a>
