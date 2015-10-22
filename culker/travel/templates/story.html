@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+    <!-- Begin TripDetail -->
+    <section id="blog" class="content padded container">
+
+        <!-- Begin Post -->
+        <div class="grid-4">
+
+            <!-- Standard Post -->
+            <div class="post image">
+                <span class="date">{{ story.pk }}</span>
+                <div class="post-media">
+                    <img src="{{ story.cover_photo }}">
+                </div>
+                <div class="post-title">
+                    <h2><a>{{ story.name }}</a></h2>
+                </div>                          
+                    
+                <div class="post-body">
+                    
+                    <h3>{{ story.header1 }}</h3>
+                    <p>{{ story.paragraph1 }}</p>
+                    
+                    <img src="{{ story.pic1 }}">
+
+                    <span class="border" style="margin-top: 30px; margin-bottom: 20px;"></span>
+
+                    <h3>{{ story.header2 }}</h3>
+                    <p>{{ story.paragraph2 }}</p>
+
+                    <img src="{{ story.pic2 }}">
+
+                    <span class="border" style="margin-top: 30px; margin-bottom: 20px;"></span>
+                    
+                    <h3>{{ story.header3 }}</h3>
+                    <p>{{ story.paragraph3 }}</p>
+                    
+                    <img src="{{ story.pic3 }}">
+                   
+                    <h3 style="margin-top:25px;">旅途中我們將一起經歷：</h3>
+                    <p>
+                        {% for t in timetable %}
+                        {{ t }} <br>
+                        {% endfor %}
+                    </p>
+
+                    <span class="border" style="margin-top: 30px; margin-bottom: 20px;"></span>
+                    
+                    <h2>注意事項</h2>
+                    <ol type="1">
+                    {% for n in notes %}
+                        <li>{{ n }}</li>
+                    {% endfor %}
+                    </ol>
+
+
+                </div>
+            </div>
+        </div>
+        <!-- End Post -->
+
+        <!-- Begin Sidebar -->
+        <div class="grid-2">
+            <div class="sidebar">
+                <!-- calendar -->
+                <div style="margin-top: 50px;"></div>
+                
+                
+                <!-- text widget -->
+                <div class="widget" style="text-align: center;">
+                    <h4>行程資訊</h4>
+                    <span class="border" style="margin-top: 10px; margin-bottom: 15px;"></span>
+                    <div class="textwidget">
+                        <h5>費用 NTD {{ story.fee }}</h5>
+                        <h5>語言 {{ story.language }}</h5>
+                        <h5>總共歷時 {{ story.duration }}</h5>
+                        <h5>退訂政策 <a href="{% url 'help' %}">{{ story.cancel }}</a></h5>
+                    </div>
+                </div>
+        
+                <a class="button" target="_new" href="{{ story.enroll_form }}" style="margin-top: 30px;">立即報名</a>         
+                    
+            </div>
+        </div>
+        <!-- End Sidebar -->
+    </section>
+    <!-- End Blog -->   
+
+    {% endblock %}
