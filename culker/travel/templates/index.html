@@ -95,7 +95,11 @@
                         <div class="meta">
                             <h4>{{ seed.name }}</h4>
                             <h6>{{ seed.quote }}</h6>
-                            <h6><em>{{ seed.get_location_display }}</em></h6>
+                            {% if seed.place %}
+                                <h6><em>{{ seed.place }}</em></h6>
+                            {% else %}
+                                <h6><em>{{ seed.get_location_display }}</em></h6>
+                            {% endif %}
                         </div>
                     </div>
                 </a>

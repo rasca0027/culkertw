@@ -33,7 +33,11 @@
 
         <div class="project-title grid-full">
             <h4 style="margin-top: 30px;">{{ seed.name }}</h4>
-            <h6><em>{{ seed.get_location_display }}</em></h6>
+            {% if seed.place %}
+                <h6><em>{{ seed.place }}</em></h6>
+            {% else %}
+                <h6><em>{{ seed.get_location_display }}</em></h6>
+            {% endif %}
             <p>{{ seed.intro }}</p>
         </div>
 

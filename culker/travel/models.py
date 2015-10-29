@@ -13,6 +13,7 @@ class Seed(models.Model):
     name = models.CharField(max_length=30)
     quote = models.CharField(max_length=60)
     location = models.CharField(choices=LOC_CHOICE, max_length=20)
+    place = models.CharField(max_length=20, blank=True)
     intro = models.TextField()
     avatar = models.CharField(max_length=1000)
     banner1 = models.CharField(max_length=1000)
