@@ -81,8 +81,9 @@
                     </div>
                 </div>
         
+                {% if story.enroll_form %}
                 <a class="button" target="_new" href="{{ story.enroll_form }}" style="margin-top: 30px;">立即報名</a>         
-                    
+                {% endif %}
             </div>
         </div>
         <!-- End Sidebar -->
