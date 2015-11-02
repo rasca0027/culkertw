@@ -15,6 +15,7 @@ class Seed(models.Model):
     location = models.CharField(choices=LOC_CHOICE, max_length=20)
     place = models.CharField(max_length=20, blank=True)
     intro = models.TextField()
+    intro2 = models.TextField(blank=True)
     avatar = models.CharField(max_length=1000)
     banner1 = models.CharField(max_length=1000)
     banner2 = models.CharField(max_length=1000)
