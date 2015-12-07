@@ -1,25 +1,27 @@
 {% extends 'base.html' %}
 
 {% load static %}
+
+{% block extra_script %}
+<link href="{% static 'stylesheets/js-image-slider.css' %}" rel="stylesheet" type="text/css" />
+<script src="{% static 'javascript/js-image-slider.js' %}" type="text/javascript"></script>
+{% endblock %}
+
 {% block body %}
     <!-- AJAX Content -->
     <div id="ajaxpage" class="container">
 
         <div class="project-hero grid-full">
-            <div class="bx-wrapper" style="max-width: 100%;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 520px;">
-                <!-- Slider -->
-                <ul class="slider clearfix">
-                    <li>
+            <div class="bx-wrapper" style="max-width: 100%;">
+                <div class="bx-viewport" id="sliderFrame" style="width: 100%; overflow: hidden; position: relative; height: 580px;margin-top:40px">
+                    <!-- Slider -->
+                    <div id="slider">
                         <img src="{{ seed.banner1 }}" alt="">
-                    </li>
-                    <li>
                         <img src="{{ seed.banner2 }}" alt="">
-                    </li>
-                    <li>
                         <img src="{{ seed.banner3 }}" alt="">
-                    </li>
-                </ul>
-            </div></div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Pager -->
             <div class="slider-pager"></div>
